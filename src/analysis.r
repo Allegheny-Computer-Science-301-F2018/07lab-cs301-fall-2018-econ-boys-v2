@@ -1,9 +1,9 @@
-##### Your Name:
-##### Names of group members:
+##### Your Name: Econ Boys v2
+##### Names of group members: Simon, Zach, Jerfenson
 ##### Date: 16 November 2018
 
 
-##### Date source:
+##### Date source: 16 November 2018
 #### World Bank's Online Data Base: Gender Statistics
 ###### https://datacatalog.worldbank.org/dataset/gender-statistics
 
@@ -13,11 +13,13 @@
 library(dplyr)
 library(tidyverse)
 library(psych)
+library(dplyr)
+library(readxl)
 
 ##### Begin by loading your csv file from the supplimental/ directory.
 
-data <- read.table(file.choose(), header = TRUE, sep = ",")
-
+#data <- read.table(file.choose(), header = TRUE, sep = ",")
+Gender_StatsEXCEL <- read_excel("~/07lab-cs301-fall-2018-econ-boys-v2/data/Gender_StatsEXCEL.xlsx")
 
 
 
