@@ -13,13 +13,15 @@
 library(dplyr)
 library(tidyverse)
 library(psych)
-library(dplyr)
-library(readxl)
+
+
 
 ##### Begin by loading your csv file from the supplimental/ directory.
 
 data <- read.table(file.choose(),fill = TRUE , header = TRUE, sep = ",")
-#Gender_StatsEXCEL <- read_excel("07lab-cs301-fall-2018-econ-boys-v2/data/Gender_StatsEXCEL.xlsx")
+Australia <- filter(data, Country.Name == "Australia")
+Argentina <- filter(data, Country.Name = "Argentina")
+
 
 
 
