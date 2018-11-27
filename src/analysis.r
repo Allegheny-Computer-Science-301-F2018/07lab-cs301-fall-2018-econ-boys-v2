@@ -37,22 +37,23 @@ Canada <- filter(my_data, Country == "Canada")
 ##### Question 1: The decline in marriage rates.
 ##### Analysis to respond to this research question.
 
-CanadaAnalysis <- filter(Canada[c(25, 75, 77),])
-AustraliaAnalysis <- filter(Australia[c(25, 75, 77),])
+CanadaAnalysis <- filter(Canada[c(75, 77, 219),])
+AustraliaAnalysis <- filter(Australia[c(75, 77, 219),])
                           
                            #Canada 
 # Time required to start a business, female (days
-# Average number of hours spent on unpaid domestic work (housework and child care), female
 # Contributing family workers, female (% of female employment)   
+
+#mod <- lm(LungCap ~ Age + Height)
+#summary(mod)
 
 
                           #Australia
 # Time required to start a business, female (days
-# Average number of hours spent on unpaid domestic work (housework and child care), female
 # Contributing family workers, female (% of female employment)   
 
 
-
+plot <- ggplot(data=AustraliaAnalysis, aes(x=))
 
 
 ##### Question 2: The narrowing gender wage gap
