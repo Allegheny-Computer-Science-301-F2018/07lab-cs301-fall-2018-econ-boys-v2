@@ -23,14 +23,11 @@ library(readxl)
 
 my_data <- read_excel(file.choose())
 names(my_data)[1] <- "Country"
+names(my_data)[3] <- "IndicatorName"
 attach(my_data)
 
 Australia <- filter(my_data, Country == "Australia")
 Canada <- filter(my_data, Country == "Canada")
-
-names(my_data)[1] <- "Country"
-names(my_data)[3] <- "IndicatorName"
-
 
 
 
