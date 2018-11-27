@@ -1,6 +1,5 @@
-#### Names:
-#### Names of group members:
-#### Date: 16 November 2018
+#### Names of group members: Zach Leonardo, Jerfenson Cerda Mejia, Simon Burrows
+#### Date: 26 November 2018
 
 Please use graphics to show your work.
 Image display example:
