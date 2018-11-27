@@ -19,9 +19,12 @@ library(readxl)
 
 ##### Begin by loading your csv file from the supplimental/ directory.
 
-data <- read.table(file.choose(),fill = TRUE , header = TRUE, sep = ",")
+#data <- read.table(file.choose(),fill = TRUE , header = TRUE, sep = ",")
 
 my_data <- read_excel(file.choose())
+names(my_data)[1] <- "Country"
+attach(my_data)
+
 Australia <- filter(my_data, Country == "Australia")
 Canada <- filter(my_data, Country == "Canada")
 
