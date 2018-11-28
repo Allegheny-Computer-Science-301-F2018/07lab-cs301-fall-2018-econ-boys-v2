@@ -52,11 +52,11 @@ rownames(AustraliaAnalysis) <- NULL
 names(AustraliaAnalysis)[1] <- "Year"
 attach(AustraliaAnalysis)
 #plot for contribution:
-ggplot(AustraliaAnalysis) + geom_point(mapping = aes(x = Year, y = contributing))
+ggplot(AustraliaAnalysis) + geom_point(mapping = aes(x = Year, y = contributingA))
 #plot for startup:
-ggplot(AustraliaAnalysis) + geom_point(mapping = aes(x = Year, y = startup))
+ggplot(AustraliaAnalysis) + geom_point(mapping = aes(x = Year, y = startupA))
 #plot for total female labor as % of labor force:
-ggplot(AustraliaAnalysis) + geom_point(mapping = aes(x = Year, y = total_labor))
+ggplot(AustraliaAnalysis) + geom_point(mapping = aes(x = Year, y = total_laborA))
 #To generate p-value:
 Australia_Contribution <- unfactor(contributingA)
 Australia_Startup <- unfactor(startupA)
@@ -74,16 +74,17 @@ rownames(CanadaAnalysis) <- NULL
 names(CanadaAnalysis)[1] <- "Year"
 attach(CanadaAnalysis)
 #plot for contribution:
-ggplot(CanadaAnalysis) + geom_point(mapping = aes(x = Year, y = contributing))
+ggplot(CanadaAnalysis) + geom_point(mapping = aes(x = Year, y = contributingC))
 #plot for startup:
-ggplot(CanadaAnalysis) + geom_point(mapping = aes(x = Year, y = startup))
+ggplot(CanadaAnalysis) + geom_point(mapping = aes(x = Year, y = startupC))
 #plot for total female labor as % of labor force:
-ggplot(CanadaAnalysis) + geom_point(mapping = aes(x = Year, y = total_labor))
+ggplot(CanadaAnalysis) + geom_point(mapping = aes(x = Year, y = total_laborC))
 #TO generate p-value
 Canada_Contribution <- unfactor(contributingC)
 Canada_Startup <- unfactor(startupC)
 Canada_Labor <- unfactor(total_laborC)
 Canada_Mod1 <- lm(Canada_Labor ~ Canada_Contribution + Canada_Startup)
+summary(Canada_Mod1)
 #End of Canada Analysis
 
                            #Canada 
