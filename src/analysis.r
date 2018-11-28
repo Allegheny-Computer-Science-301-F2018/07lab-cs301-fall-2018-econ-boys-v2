@@ -42,20 +42,24 @@ AustraliaAnalysis <- filter(Australia[c(75, 77, 219),])
 
 AustraliaAnalysis <- as.data.frame(t(AustraliaAnalysis))
 AustraliaAnalysis <- AustraliaAnalysis[-c(1,2,4),]
-colnames(AustraliaAnalysis) <- c("Contributing family workers, female (% of female employment)", "Cost of business start-up procedures, female (% of GNI per capita)", "Labor force, total")
+colnames(AustraliaAnalysis) <- c("contributing", "startup", "total_labor")
 AustraliaAnalysis <- AustraliaAnalysis[-c(1),]
+AustraliaAnalysis <- AustraliaAnalysis[-c(1:30), ]
 AustraliaAnalysis <- cbind(rownames(AustraliaAnalysis), AustraliaAnalysis)
 rownames(AustraliaAnalysis) <- NULL
-colnames(AustraliaAnalysis) <- c("Year","Contributing", "Start-up", "Total_Labor")
-
+names(AustraliaAnalysis)[1] <- "Year"
+attach(AustraliaAnalysis)
+ggplot(data = AustraliaAnalysis) + geom_point(mapping = aes(x = Year, y = contributing))
 
 CanadaAnalysis <- as.data.frame(t(CanadaAnalysis))
 CanadaAnalysis <- CanadaAnalysis[-c(1,2,4),]
-colnames(CanadaAnalysis) <- c("Contributing family workers, female (% of female employment)", "Cost of business start-up procedures, female (% of GNI per capita)", "Labor force, total")
-CanadaAnalysis <- CanadaAnalysis[-c(1),]
+colnames(CanadaAnalysis) <- c("contributing", "startup", "total_labor")
+CanadaAnalysis <- CanadaAnalysis[-c(1:31), ]
 CanadaAnalysis <- cbind(rownames(CanadaAnalysis), CanadaAnalysis)
 rownames(CanadaAnalysis) <- NULL
-colnames(CanadaAnalysis) <- c("Year","Contributing", "Start-up", "Total_Labor")
+names(CanadaAnalysis)[1] <- "Year"
+attach(CanadaAnalysis)
+ggplot(data = CanadaAnalysis) + geom_point(mapping = aes(x = Year, y = contributing))
 
                            #Canada 
 # Time required to start a business, female (days
