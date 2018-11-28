@@ -39,8 +39,8 @@ Canada <- filter(my_data, Country == "Canada")
 ##### Question 1: The decline in marriage rates.
 ##### Analysis to respond to this research question.
 
-CanadaAnalysis <- filter(Canada[c(75, 77, 219),])
-AustraliaAnalysis <- filter(Australia[c(75, 77, 219),])
+CanadaAnalysis <- filter(Canada[c(75, 77, 218),])
+AustraliaAnalysis <- filter(Australia[c(75, 77, 218),])
 
 AustraliaAnalysis <- as.data.frame(t(AustraliaAnalysis))
 AustraliaAnalysis <- AustraliaAnalysis[-c(1,2,4),]
@@ -51,12 +51,19 @@ AustraliaAnalysis <- cbind(rownames(AustraliaAnalysis), AustraliaAnalysis)
 rownames(AustraliaAnalysis) <- NULL
 names(AustraliaAnalysis)[1] <- "Year"
 attach(AustraliaAnalysis)
-ggplot(data = AustraliaAnalysis) + geom_point(mapping = aes(x = Year, y = contributing))
-
+#plot for contribution:
+ggplot(AustraliaAnalysis) + geom_point(mapping = aes(x = Year, y = contributing))
+#plot for startup:
+ggplot(AustraliaAnalysis) + geom_point(mapping = aes(x = Year, y = startup))
+#plot for total female labor as % of labor force:
+ggplot(AustraliaAnalysis) + geom_point(mapping = aes(x = Year, y = total_labor))
+#To generate p-value:
 Australia_Contribution <- unfactor(contributingA)
 Australia_Startup <- unfactor(startupA)
 Australia_Labor <- unfactor(total_laborA)
 Australia_Mod1 <- lm(Australia_Labor ~ Australia_Contribution + Australia_Startup)
+summary(Australia_Mod1)
+#End of Australia Analysis
 
 CanadaAnalysis <- as.data.frame(t(CanadaAnalysis))
 CanadaAnalysis <- CanadaAnalysis[-c(1,2,4),]
@@ -66,12 +73,18 @@ CanadaAnalysis <- cbind(rownames(CanadaAnalysis), CanadaAnalysis)
 rownames(CanadaAnalysis) <- NULL
 names(CanadaAnalysis)[1] <- "Year"
 attach(CanadaAnalysis)
-ggplot(data = CanadaAnalysis) + geom_point(mapping = aes(x = Year, y = contributing))
-
+#plot for contribution:
+ggplot(CanadaAnalysis) + geom_point(mapping = aes(x = Year, y = contributing))
+#plot for startup:
+ggplot(CanadaAnalysis) + geom_point(mapping = aes(x = Year, y = startup))
+#plot for total female labor as % of labor force:
+ggplot(CanadaAnalysis) + geom_point(mapping = aes(x = Year, y = total_labor))
+#TO generate p-value
 Canada_Contribution <- unfactor(contributingC)
 Canada_Startup <- unfactor(startupC)
 Canada_Labor <- unfactor(total_laborC)
 Canada_Mod1 <- lm(Canada_Labor ~ Canada_Contribution + Canada_Startup)
+#End of Canada Analysis
 
                            #Canada 
 # Time required to start a business, female (days
