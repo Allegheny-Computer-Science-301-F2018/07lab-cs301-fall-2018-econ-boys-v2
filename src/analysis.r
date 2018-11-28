@@ -104,6 +104,61 @@ summary(Canada_Mod1)
 ##### Question 2: The narrowing gender wage gap
 ##### Analysis to respond to this research question.
 
+CanadaAnalysisQ2 <- filter(Canada[c(121, 148, 498),])
+AustraliaAnalysisQ2 <- filter(Australia[c(121, 148, 498),])
+
+AustraliaAnalysisQ2 <- as.data.frame(t(AustraliaAnalysisQ2))
+AustraliaAnalysisQ2 <- AustraliaAnalysisQ2[-c(1,2,4),]
+colnames(AustraliaAnalysisQ2) <- c("Educational_BachelorA", "Employment_industryA", "Wage_salariedA")
+AustraliaAnalysisQ2<- AustraliaAnalysisQ2[-c(1),]
+AustraliaAnalysisQ2<- cbind(rownames(AustraliaAnalysisQ2), AustraliaAnalysisQ2)
+rownames(AustraliaAnalysisQ2) <- NULL
+names(AustraliaAnalysisQ2)[1] <- "Year"
+attach(AustraliaAnalysisQ2)
+
+
+#plot for Education:
+ggplot(AustraliaAnalysisQ2) + geom_point(mapping = aes(x = Year, y = Educational_BachelorA))
+#plot for Employment:
+ggplot(AustraliaAnalysisQ2) + geom_point(mapping = aes(x = Year, y = Employment_industryA))
+#plot for Wages and Salried:
+ggplot(AustraliaAnalysisQ2) + geom_point(mapping = aes(x = Year, y = Wage_salariedA))
+
+#To generate p-value:
+Australia_Education <- unfactor(Educational_BachelorA)
+Australia_Employment <- unfactor(Employment_industryA)
+Australia_Wages_Salaries <- unfactor(Wage_salariedA)
+AustraliaQ2_Mod1 <- lm(Australia_Employment ~ Australia_Education + Australia_Wages_Salaries)
+summary(AustraliaQ2_Mod1)
+#End of Australia Analysis
+
+
+
+
+CanadaAnalysisQ2 <- as.data.frame(t(CanadaAnalysisQ2))
+CanadaAnalysisQ2 <- CanadaAnalysisQ2[-c(1,2,4),]
+colnames(CanadaAnalysisQ2) <- c("Educational_BachelorC", "Employment_industryC", "Wage_salariedC")
+CanadaAnalysisQ2<- CanadaAnalysisQ2[-c(1),]
+CanadaAnalysisQ2 <- cbind(rownames(CanadaAnalysisQ2), CanadaAnalysisQ2)
+rownames(CanadaAnalysisQ2) <- NULL
+names(CanadaAnalysisQ2)[1] <- "Year"
+attach(CanadaAnalysisQ2)
+
+#plot for Education:
+ggplot(CanadaAnalysisQ2) + geom_point(mapping = aes(x = Year, y = Educational_BachelorC))
+#plot for Employment:
+ggplot(CanadaAnalysisQ2) + geom_point(mapping = aes(x = Year, y = Employment_industryC))
+#plot for Wages and Salried:
+ggplot(CanadaAnalysisQ2) + geom_point(mapping = aes(x = Year, y = Wage_salariedC))
+
+#To generate p-value:
+Canada_Education <- unfactor(Educational_BachelorC)
+Canada_Employment <- unfactor(Employment_industryC)
+Canada_Wages_Salaries <- unfactor(Wage_salariedC)
+CanadaQ1_Mod1 <- lm(Canada_Employment ~ Canada_Education + Canada_Wages_Salaries)
+summary(CanadaQ1_Mod1)
+#End of Australia Analysis
+
                          #Canada 
 # Wage and salaried workers, female (% of female employment)
 # Educational attainment, completed Bachelor's or equivalent, population 25+ years, female (%)
