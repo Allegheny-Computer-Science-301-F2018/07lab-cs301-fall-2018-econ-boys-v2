@@ -44,11 +44,18 @@ AustraliaAnalysis <- t(AustraliaAnalysis)
 AustraliaAnalysis <- AustraliaAnalysis[-c(1,2,4),]
 colnames(AustraliaAnalysis) <- c("Contributing family workers, female (% of female employment)", "Cost of business start-up procedures, female (% of GNI per capita)", "Labor force, total")
 AustraliaAnalysis <- AustraliaAnalysis[-c(1),]
+AustraliaAnalysis <- cbind(rownames(AustraliaAnalysis), AustraliaAnalysis)
+rownames(AustraliaAnalysis) <- NULL
+names(AustraliaAnalysis)[1] <- "Year"
+
 
 CanadaAnalysis <- t(CanadaAnalysis)
 CanadaAnalysis <- CanadaAnalysis[-c(1,2,4),]
 colnames(CanadaAnalysis) <- c("Contributing family workers, female (% of female employment)", "Cost of business start-up procedures, female (% of GNI per capita)", "Labor force, total")
 CanadaAnalysis <- CanadaAnalysis[-c(1),]
+CanadaAnalysis <- cbind(rownames(CanadaAnalysis), CanadaAnalysis)
+rownames(CanadaAnalysis) <- NULL
+names(CanadaAnalysis)[1] <- "Year"
 
                            #Canada 
 # Time required to start a business, female (days
