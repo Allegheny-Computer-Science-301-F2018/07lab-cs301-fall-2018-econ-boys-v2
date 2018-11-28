@@ -14,6 +14,8 @@ library(dplyr)
 library(tidyverse)
 library(psych)
 library(readxl)
+library(varhandle)
+
 
 
 
@@ -42,20 +44,34 @@ AustraliaAnalysis <- filter(Australia[c(75, 77, 219),])
 
 AustraliaAnalysis <- as.data.frame(t(AustraliaAnalysis))
 AustraliaAnalysis <- AustraliaAnalysis[-c(1,2,4),]
-colnames(AustraliaAnalysis) <- c("Contributing family workers, female (% of female employment)", "Cost of business start-up procedures, female (% of GNI per capita)", "Labor force, total")
+colnames(AustraliaAnalysis) <- c("contributingA", "startupA", "total_laborA")
 AustraliaAnalysis <- AustraliaAnalysis[-c(1),]
+AustraliaAnalysis <- AustraliaAnalysis[-c(1:30), ]
 AustraliaAnalysis <- cbind(rownames(AustraliaAnalysis), AustraliaAnalysis)
 rownames(AustraliaAnalysis) <- NULL
-colnames(AustraliaAnalysis) <- c("Year","Contributing", "Start-up", "Total_Labor")
+names(AustraliaAnalysis)[1] <- "Year"
+attach(AustraliaAnalysis)
+ggplot(data = AustraliaAnalysis) + geom_point(mapping = aes(x = Year, y = contributing))
 
+Australia_Contribution <- unfactor(contributingA)
+Australia_Startup <- unfactor(startupA)
+Australia_Labor <- unfactor(total_laborA)
+Australia_Mod1 <- lm(Australia_Labor ~ Australia_Contribution + Australia_Startup)
 
 CanadaAnalysis <- as.data.frame(t(CanadaAnalysis))
 CanadaAnalysis <- CanadaAnalysis[-c(1,2,4),]
-colnames(CanadaAnalysis) <- c("Contributing family workers, female (% of female employment)", "Cost of business start-up procedures, female (% of GNI per capita)", "Labor force, total")
-CanadaAnalysis <- CanadaAnalysis[-c(1),]
+colnames(CanadaAnalysis) <- c("contributingC", "startupC", "total_laborC")
+CanadaAnalysis <- CanadaAnalysis[-c(1:31), ]
 CanadaAnalysis <- cbind(rownames(CanadaAnalysis), CanadaAnalysis)
 rownames(CanadaAnalysis) <- NULL
-colnames(CanadaAnalysis) <- c("Year","Contributing", "Start-up", "Total_Labor")
+names(CanadaAnalysis)[1] <- "Year"
+attach(CanadaAnalysis)
+ggplot(data = CanadaAnalysis) + geom_point(mapping = aes(x = Year, y = contributing))
+
+Canada_Contribution <- unfactor(contributingC)
+Canada_Startup <- unfactor(startupC)
+Canada_Labor <- unfactor(total_laborC)
+Canada_Mod1 <- lm(Canada_Labor ~ Canada_Contribution + Canada_Startup)
 
                            #Canada 
 # Time required to start a business, female (days
