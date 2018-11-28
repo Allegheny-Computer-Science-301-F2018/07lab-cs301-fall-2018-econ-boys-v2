@@ -198,15 +198,15 @@ rownames(CanadaAnalysisQ3) <- NULL
 names(CanadaAnalysisQ3)[1] <- "Year"
 attach(CanadaAnalysisQ3)
 #plot for female labor force participation rate:
-ggplot(CanadaAnalysisQ3) + geom_point(mapping = aes(x = Year, y = participationA))
+ggplot(CanadaAnalysisQ3) + geom_point(mapping = aes(x = Year, y = participationC))
 #plot for female employers as % of femal employment:
-ggplot(CanadaAnalysisQ3) + geom_point(mapping = aes(x = Year, y = employersA))
+ggplot(CanadaAnalysisQ3) + geom_point(mapping = aes(x = Year, y = employersC))
 #plot for total female labor as % of labor force:
-ggplot(CanadaAnalysisQ3) + geom_point(mapping = aes(x = Year, y = total_laborA))
+ggplot(CanadaAnalysisQ3) + geom_point(mapping = aes(x = Year, y = total_laborC))
 #To generate p-value:
-Canada_participation <- unfactor(participationA)
-Canada_employers <- unfactor(employersA)
-Canada_Labor <- unfactor(total_laborA)
+Canada_participation <- unfactor(participationC)
+Canada_employers <- unfactor(employersC)
+Canada_Labor <- unfactor(total_laborC)
 Canada_Mod3 <- lm(Canada_Labor ~ Canada_participation + Canada_employers)
 summary(Canada_Mod3)
 #End of Cananda analysis
