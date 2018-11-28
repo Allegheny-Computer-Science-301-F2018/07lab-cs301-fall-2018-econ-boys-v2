@@ -40,22 +40,22 @@ Canada <- filter(my_data, Country == "Canada")
 CanadaAnalysis <- filter(Canada[c(75, 77, 219),])
 AustraliaAnalysis <- filter(Australia[c(75, 77, 219),])
 
-AustraliaAnalysis <- t(AustraliaAnalysis)
+AustraliaAnalysis <- as.data.frame(t(AustraliaAnalysis))
 AustraliaAnalysis <- AustraliaAnalysis[-c(1,2,4),]
 colnames(AustraliaAnalysis) <- c("Contributing family workers, female (% of female employment)", "Cost of business start-up procedures, female (% of GNI per capita)", "Labor force, total")
 AustraliaAnalysis <- AustraliaAnalysis[-c(1),]
 AustraliaAnalysis <- cbind(rownames(AustraliaAnalysis), AustraliaAnalysis)
 rownames(AustraliaAnalysis) <- NULL
-names(AustraliaAnalysis)[1] <- "Year"
+colnames(AustraliaAnalysis) <- c("Year","Contributing", "Start-up", "Total_Labor")
 
 
-CanadaAnalysis <- t(CanadaAnalysis)
+CanadaAnalysis <- as.data.frame(t(CanadaAnalysis))
 CanadaAnalysis <- CanadaAnalysis[-c(1,2,4),]
 colnames(CanadaAnalysis) <- c("Contributing family workers, female (% of female employment)", "Cost of business start-up procedures, female (% of GNI per capita)", "Labor force, total")
 CanadaAnalysis <- CanadaAnalysis[-c(1),]
 CanadaAnalysis <- cbind(rownames(CanadaAnalysis), CanadaAnalysis)
 rownames(CanadaAnalysis) <- NULL
-names(CanadaAnalysis)[1] <- "Year"
+colnames(CanadaAnalysis) <- c("Year","Contributing", "Start-up", "Total_Labor")
 
                            #Canada 
 # Time required to start a business, female (days
