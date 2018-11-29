@@ -22,12 +22,14 @@ The article highlights the shifting cultural norms for women at home and in the 
 
 As society has been advancing recently, women have begun to work more. This shift towards market work is well documented in the data that we have graphed and are analyzing. The total percentage of women in the labor force is the best indicator of this trend. As seen by the graphs for both Canada and Australia, the percentage of women in the labor force has been steadily increasing, showing a shift from housework to market work (See Figures 13 and 14)[TOTAL LABOR]. To back this up, we also analyzed the labor force participation rate for women. This shows that the general trend, despite being somewhat erratic, has been increasing since the 1970s (See Figures 15 and 16)[LABOR FORCE PARTICIPATION]. Our final variable that we analyzed was the percentage of women employers. This was one that went against the rest of our data. In Canada, it increased until 2000, and has since been declining. In Australia, it was very random until 2001 when it peaked, and has also been decreasing since then. [EMPLOYER GRAPHS] This is interesting since as there have been more women working, one would assume that there would have been an increase in women employers as well.
 
+All these factors support evidence cultural shift towards female market work. The results of our multi-linear
+
 #### Q4: The change in women’s bargaining power within the household.
 The article states that bargaining power within a household originates from whoever works the most hours and earns the highest wages.
 
 As more women join the workforce and become educated, their prevalence in household decisions increases. In Canada, women are becoming more self employed [SELF EMPLOYED CA], but at the same time the percentage of women earning salaries is decreasing [SALARIED CA]. At the same time however, Australian women that work salaried jobs is increasing [SALARIED AU] while the percentage of self employed women is decreasing. The difference between the two countries is very interesting since they seem to be opposites despite being two similar countries (developed, western). Despite these differences, as we have seen previously, women are still working more in general. We also analyzed the unemployment for women with advanced educations which, in general, showed that unemployment for this demographic is decreasing. Due to the erratic nature of the economy, it is hard to get concrete data for this analysis [ADVANCED]. Overall, with unemployment for educated women decreasing, as well as women becoming employed, whether it is salaried or self employment, women are going to be earning more money than previously. As they earn more money, they have gain more bargaining power in the household since they are able to contribute more.
 
-![SELF EMPLOYED](img/Self_emp4_AU.png)
+![SELF EMPLOYED](a)
 
 
 
