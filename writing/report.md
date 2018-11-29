@@ -27,7 +27,7 @@ The article states that bargaining power within a household originates from whoe
 
 As more women join the workforce and become educated, their prevalence in household decisions increases. In Canada, women are becoming more self employed [SELF EMPLOYED CA], but at the same time the percentage of women earning salaries is decreasing [SALARIED CA]. At the same time however, Australian women that work salaried jobs is increasing [SALARIED AU] while the percentage of self employed women is decreasing. The difference between the two countries is very interesting since they seem to be opposites despite being two similar countries (developed, western). Despite these differences, as we have seen previously, women are still working more in general. We also analyzed the unemployment for women with advanced educations which, in general, showed that unemployment for this demographic is decreasing. Due to the erratic nature of the economy, it is hard to get concrete data for this analysis [ADVANCED]. Overall, with unemployment for educated women decreasing, as well as women becoming employed, whether it is salaried or self employment, women are going to be earning more money than previously. As they earn more money, they have gain more bargaining power in the household since they are able to contribute more.
 
-![SELF EMPLOYED](/img/Self_emp4_AU.png)
+![SELF EMPLOYED](img/Self_emp4_AU.png)
 
 
 
