@@ -39,12 +39,12 @@ Canada <- filter(my_data, Country == "Canada")
 ##### Question 1: The decline in marriage rates.
 ##### Analysis to respond to this research question.
 
-CanadaAnalysis <- filter(Canada[c(75, 77, 218),])
-AustraliaAnalysis <- filter(Australia[c(75, 77, 218),])
+CanadaAnalysis <- filter(Canada[c(335, 77, 218),])
+AustraliaAnalysis <- filter(Australia[c(335, 77, 218),])
 
 AustraliaAnalysis <- as.data.frame(t(AustraliaAnalysis))
 AustraliaAnalysis <- AustraliaAnalysis[-c(1,2,4),]
-colnames(AustraliaAnalysis) <- c("contributingA", "startupA", "total_laborA")
+colnames(AustraliaAnalysis) <- c("own_accountA", "startupA", "total_laborA")
 AustraliaAnalysis <- AustraliaAnalysis[-c(1),]
 AustraliaAnalysis <- AustraliaAnalysis[-c(1:30), ]
 AustraliaAnalysis <- cbind(rownames(AustraliaAnalysis), AustraliaAnalysis)
@@ -52,38 +52,38 @@ rownames(AustraliaAnalysis) <- NULL
 names(AustraliaAnalysis)[1] <- "Year"
 attach(AustraliaAnalysis)
 #plot for contribution:
-ggplot(AustraliaAnalysis) + geom_point(mapping = aes(x = Year, y = contributingA))
+ggplot(AustraliaAnalysis) + geom_point(mapping = aes(x = Year, y = own_accountA))
 #plot for startup:
 ggplot(AustraliaAnalysis) + geom_point(mapping = aes(x = Year, y = startupA))
 #plot for total female labor as % of labor force:
 ggplot(AustraliaAnalysis) + geom_point(mapping = aes(x = Year, y = total_laborA))
 #To generate p-value:
-Australia_Contribution <- unfactor(contributingA)
+Australia_Account <- unfactor(own_accountA)
 Australia_Startup <- unfactor(startupA)
 Australia_Labor <- unfactor(total_laborA)
-Australia_Mod1 <- lm(Australia_Labor ~ Australia_Contribution + Australia_Startup)
+Australia_Mod1 <- lm(Australia_Labor ~ Australia_Account + Australia_Startup)
 summary(Australia_Mod1)
 #End of Australia Analysis
 
 CanadaAnalysis <- as.data.frame(t(CanadaAnalysis))
 CanadaAnalysis <- CanadaAnalysis[-c(1,2,4),]
-colnames(CanadaAnalysis) <- c("contributingC", "startupC", "total_laborC")
+colnames(CanadaAnalysis) <- c("own_accountC", "startupC", "total_laborC")
 CanadaAnalysis <- CanadaAnalysis[-c(1:31), ]
 CanadaAnalysis <- cbind(rownames(CanadaAnalysis), CanadaAnalysis)
 rownames(CanadaAnalysis) <- NULL
 names(CanadaAnalysis)[1] <- "Year"
 attach(CanadaAnalysis)
 #plot for contribution:
-ggplot(CanadaAnalysis) + geom_point(mapping = aes(x = Year, y = contributingC))
+ggplot(CanadaAnalysis) + geom_point(mapping = aes(x = Year, y = own_accountC))
 #plot for startup:
 ggplot(CanadaAnalysis) + geom_point(mapping = aes(x = Year, y = startupC))
 #plot for total female labor as % of labor force:
 ggplot(CanadaAnalysis) + geom_point(mapping = aes(x = Year, y = total_laborC))
 #TO generate p-value
-Canada_Contribution <- unfactor(contributingC)
+Canada_Account <- unfactor(own_accountC)
 Canada_Startup <- unfactor(startupC)
 Canada_Labor <- unfactor(total_laborC)
-Canada_Mod1 <- lm(Canada_Labor ~ Canada_Contribution + Canada_Startup)
+Canada_Mod1 <- lm(Canada_Labor ~ Canada_Account + Canada_Startup)
 summary(Canada_Mod1)
 #End of Canada Analysis
 
@@ -225,12 +225,12 @@ summary(Canada_Mod3)
 ##### Analysis to respond to this research question.
 
 #Start of Australia analysis:
-CanadaAnalysisQ4 <- filter(Canada[c(75, 498, 436),])
-AustraliaAnalysisQ4 <- filter(Australia[c(75, 498, 436),])
+CanadaAnalysisQ4 <- filter(Canada[c(451, 498, 436),])
+AustraliaAnalysisQ4 <- filter(Australia[c(451, 498, 436),])
 
 AustraliaAnalysisQ4 <- as.data.frame(t(AustraliaAnalysisQ4))
 AustraliaAnalysisQ4 <- AustraliaAnalysisQ4[-c(1,2,4),]
-colnames(AustraliaAnalysisQ4) <- c("contributingA", "salariedA", "self_empA")
+colnames(AustraliaAnalysisQ4) <- c("advanced_unemployedA", "salariedA", "self_empA")
 AustraliaAnalysisQ4 <- AustraliaAnalysisQ4[-c(1),]
 AustraliaAnalysisQ4 <- AustraliaAnalysisQ4[-c(1:30), ]
 AustraliaAnalysisQ4 <- cbind(rownames(AustraliaAnalysisQ4), AustraliaAnalysisQ4)
@@ -238,23 +238,23 @@ rownames(AustraliaAnalysisQ4) <- NULL
 names(AustraliaAnalysisQ4)[1] <- "Year"
 attach(AustraliaAnalysisQ4)
 #plot for contribution:
-ggplot(AustraliaAnalysisQ4) + geom_point(mapping = aes(x = Year, y = contributingA))
+ggplot(AustraliaAnalysisQ4) + geom_point(mapping = aes(x = Year, y = advanced_unemployedA))
 #plot for salaried female workers as % of femal employmen:
 ggplot(AustraliaAnalysisQ4) + geom_point(mapping = aes(x = Year, y = salariedA))
 #plot for self employeed female workers:
 ggplot(AustraliaAnalysisQ4) + geom_point(mapping = aes(x = Year, y = self_empA))
 #To generate p-value:
-Australia_contributionQ4 <- unfactor(contributingA)
+Australia_advancedQ4 <- unfactor(advanced_unemployedA)
 Australia_salaried <- unfactor(salariedA)
 Australia_self <- unfactor(self_empA)
-Australia_Mod4 <- lm(Australia_salaried ~ Australia_contributionQ4 + Australia_self)
+Australia_Mod4 <- lm(Australia_salaried ~ Australia_advancedQ4 + Australia_self)
 summary(Australia_Mod4)
 #End of Australia analysis
 
 #Start of Canada analysis:
 CanadaAnalysisQ4 <- as.data.frame(t(CanadaAnalysisQ4))
 CanadaAnalysisQ4 <- CanadaAnalysisQ4[-c(1,2,4),]
-colnames(CanadaAnalysisQ4) <- c("contributingC", "salariedC", "self_empC")
+colnames(CanadaAnalysisQ4) <- c("advacned_unemployedC", "salariedC", "self_empC")
 CanadaAnalysisQ4 <- CanadaAnalysisQ4[-c(1),]
 CanadaAnalysisQ4 <- CanadaAnalysisQ4[-c(1:16), ]
 CanadaAnalysisQ4 <- cbind(rownames(CanadaAnalysisQ4), CanadaAnalysisQ4)
@@ -262,24 +262,24 @@ rownames(CanadaAnalysisQ4) <- NULL
 names(CanadaAnalysisQ4)[1] <- "Year"
 attach(CanadaAnalysisQ4)
 #plot for contribution:
-ggplot(CanadaAnalysisQ4) + geom_point(mapping = aes(x = Year, y = contributingC))
+ggplot(CanadaAnalysisQ4) + geom_point(mapping = aes(x = Year, y = advacned_unemployedC))
 #plot for salaried female workers as % of femal employmen:
 ggplot(CanadaAnalysisQ4) + geom_point(mapping = aes(x = Year, y = salariedC))
 #plot for self employed female workers:
 ggplot(CanadaAnalysisQ4) + geom_point(mapping = aes(x = Year, y = self_empC))
 #To generate p-value:
-Canada_contributionQ4 <- unfactor(contributingC)
+Canada_advancedQ4 <- unfactor(advacned_unemployedC)
 Canada_salaried <- unfactor(salariedC)
 Canada_self <- unfactor(self_empC)
-Canada_Mod4 <- lm(Canada_salaried ~ Canada_contributionQ4+ Canada_self)
+Canada_Mod4 <- lm(Canada_salaried ~ Canada_advancedQ4+ Canada_self)
 summary(Canada_Mod4)
 #End of Canada analysis
                       #Canada
-# Contributing family workers, female (% of female employment) 
+#Unemployment with advanced education, female (% of female labor force with advanced education)
 # Wage and salaried workers, female (% of female employment) comparing to males 
 # elf-employed, female (% of female employment)
 
                     #Australia
-# Contributing family workers, female (% of female employment)  
+# Unemployment with advanced education, female (% of female labor force with advanced education)  
 # Wage and salaried workers, female (% of female employment) comparing to males 
 # elf-employed, female (% of female employment)
